@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Kalkulator Faktorial - Fiqri Fahra</title>
+</head>
+<body>
+    <h1>Kalkulator Faktorial</h1>
+    <hr>
+    <p>Masukkan sebuah angka:</p>
+
+    <label for="inputAngka">Angka:</label>   
+    <input type="number" id="inputAngka" min="0">
+    <br>
+    <br>
+    <button onclick="bilanganFaktorial()">Hitung Faktorial</button>
+
+    <p id="hasil"></p>
+    <br>
+    <br>
+    <br>
+    <h5 style="color:red;" align="right">Fiqri Fahra <br> 21/473296/TK/52153</h5>
+
+    <script>
+        function faktorial(n) {
+            if (n === 0) {
+                return 1;
+            }
+            return n * faktorial(n - 1);
+        }
+        
+        function bilanganFaktorial() {
+            var inputValue = parseInt(document.getElementById("inputAngka").value);
+            var result = faktorial(inputValue);
+            document.getElementById("hasil").innerHTML = "Faktorial dari " + inputValue + " adalah " + result;
+        }
+    </script>
+</body>
+</html>
